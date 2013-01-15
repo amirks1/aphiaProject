@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions name="LocalAphiaService" targetNamespace="http://serviceLocal/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://serviceLocal/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+  <wsdl:types>
+    <schema xmlns="http://www.w3.org/2001/XMLSchema">
+  <import namespace="http://serviceLocal/" schemaLocation="localaphia_schema1.xsd"/>
+</schema>
+  </wsdl:types>
+  <wsdl:message name="getAphiaNameByIDResponse">
+    <wsdl:part name="parameters" element="tns:getAphiaNameByIDResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getAphiaRecordsByVernacularResponse">
+    <wsdl:part name="parameters" element="tns:getAphiaRecordsByVernacularResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getAphiaRecordsByNames">
+    <wsdl:part name="parameters" element="tns:getAphiaRecordsByNames">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getSourcesByAphiaID">
+    <wsdl:part name="parameters" element="tns:getSourcesByAphiaID">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getAphiaChildrenByID">
+    <wsdl:part name="parameters" element="tns:getAphiaChildrenByID">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getAphiaRecords">
+    <wsdl:part name="parameters" element="tns:getAphiaRecords">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getAphiaSynonymsByID">
+    <wsdl:part name="parameters" element="tns:getAphiaSynonymsByID">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getAphiaRecordByTSN">
+    <wsdl:part name="parameters" element="tns:getAphiaRecordByTSN">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getAphiaChildrenByIDResponse">
+    <wsdl:part name="parameters" element="tns:getAphiaChildrenByIDResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getAphiaClassificationByID">
+    <wsdl:part name="parameters" element="tns:getAphiaClassificationByID">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getAphiaVernacularsByIDResponse">
+    <wsdl:part name="parameters" element="tns:getAphiaVernacularsByIDResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getAphiaIDResponse">
+    <wsdl:part name="parameters" element="tns:getAphiaIDResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getAphiaRecordsByVernacular">
+    <wsdl:part name="parameters" element="tns:getAphiaRecordsByVernacular">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getAphiaRecordsByNamesResponse">
+    <wsdl:part name="parameters" element="tns:getAphiaRecordsByNamesResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getAphiaClassificationByIDResponse">
+    <wsdl:part name="parameters" element="tns:getAphiaClassificationByIDResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getAphiaNameByID">
+    <wsdl:part name="parameters" element="tns:getAphiaNameByID">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getAphiaVernacularsByID">
+    <wsdl:part name="parameters" element="tns:getAphiaVernacularsByID">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getSourcesByAphiaIDResponse">
+    <wsdl:part name="parameters" element="tns:getSourcesByAphiaIDResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getAphiaRecordByTSNResponse">
+    <wsdl:part name="parameters" element="tns:getAphiaRecordByTSNResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getAphiaRecordsResponse">
+    <wsdl:part name="parameters" element="tns:getAphiaRecordsResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getAphiaRecordByIDResponse">
+    <wsdl:part name="parameters" element="tns:getAphiaRecordByIDResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getAphiaID">
+    <wsdl:part name="parameters" element="tns:getAphiaID">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getAphiaRecordByID">
+    <wsdl:part name="parameters" element="tns:getAphiaRecordByID">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getAphiaSynonymsByIDResponse">
+    <wsdl:part name="parameters" element="tns:getAphiaSynonymsByIDResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="LocalAphia">
+    <wsdl:operation name="getAphiaRecordsByVernacular">
+      <wsdl:input name="getAphiaRecordsByVernacular" message="tns:getAphiaRecordsByVernacular">
+    </wsdl:input>
+      <wsdl:output name="getAphiaRecordsByVernacularResponse" message="tns:getAphiaRecordsByVernacularResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAphiaRecordByID">
+      <wsdl:input name="getAphiaRecordByID" message="tns:getAphiaRecordByID">
+    </wsdl:input>
+      <wsdl:output name="getAphiaRecordByIDResponse" message="tns:getAphiaRecordByIDResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAphiaClassificationByID">
+      <wsdl:input name="getAphiaClassificationByID" message="tns:getAphiaClassificationByID">
+    </wsdl:input>
+      <wsdl:output name="getAphiaClassificationByIDResponse" message="tns:getAphiaClassificationByIDResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAphiaChildrenByID">
+      <wsdl:input name="getAphiaChildrenByID" message="tns:getAphiaChildrenByID">
+    </wsdl:input>
+      <wsdl:output name="getAphiaChildrenByIDResponse" message="tns:getAphiaChildrenByIDResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAphiaVernacularsByID">
+      <wsdl:input name="getAphiaVernacularsByID" message="tns:getAphiaVernacularsByID">
+    </wsdl:input>
+      <wsdl:output name="getAphiaVernacularsByIDResponse" message="tns:getAphiaVernacularsByIDResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAphiaRecordByTSN">
+      <wsdl:input name="getAphiaRecordByTSN" message="tns:getAphiaRecordByTSN">
+    </wsdl:input>
+      <wsdl:output name="getAphiaRecordByTSNResponse" message="tns:getAphiaRecordByTSNResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAphiaRecordsByNames">
+      <wsdl:input name="getAphiaRecordsByNames" message="tns:getAphiaRecordsByNames">
+    </wsdl:input>
+      <wsdl:output name="getAphiaRecordsByNamesResponse" message="tns:getAphiaRecordsByNamesResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAphiaSynonymsByID">
+      <wsdl:input name="getAphiaSynonymsByID" message="tns:getAphiaSynonymsByID">
+    </wsdl:input>
+      <wsdl:output name="getAphiaSynonymsByIDResponse" message="tns:getAphiaSynonymsByIDResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getSourcesByAphiaID">
+      <wsdl:input name="getSourcesByAphiaID" message="tns:getSourcesByAphiaID">
+    </wsdl:input>
+      <wsdl:output name="getSourcesByAphiaIDResponse" message="tns:getSourcesByAphiaIDResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAphiaRecords">
+      <wsdl:input name="getAphiaRecords" message="tns:getAphiaRecords">
+    </wsdl:input>
+      <wsdl:output name="getAphiaRecordsResponse" message="tns:getAphiaRecordsResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAphiaNameByID">
+      <wsdl:input name="getAphiaNameByID" message="tns:getAphiaNameByID">
+    </wsdl:input>
+      <wsdl:output name="getAphiaNameByIDResponse" message="tns:getAphiaNameByIDResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAphiaID">
+      <wsdl:input name="getAphiaID" message="tns:getAphiaID">
+    </wsdl:input>
+      <wsdl:output name="getAphiaIDResponse" message="tns:getAphiaIDResponse">
+    </wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="LocalAphiaServiceSoapBinding" type="tns:LocalAphia">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="getAphiaRecordByID">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getAphiaRecordByID">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getAphiaRecordByIDResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAphiaRecordsByVernacular">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getAphiaRecordsByVernacular">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getAphiaRecordsByVernacularResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAphiaChildrenByID">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getAphiaChildrenByID">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getAphiaChildrenByIDResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAphiaClassificationByID">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getAphiaClassificationByID">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getAphiaClassificationByIDResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAphiaRecordByTSN">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getAphiaRecordByTSN">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getAphiaRecordByTSNResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAphiaVernacularsByID">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getAphiaVernacularsByID">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getAphiaVernacularsByIDResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAphiaRecordsByNames">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getAphiaRecordsByNames">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getAphiaRecordsByNamesResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAphiaSynonymsByID">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getAphiaSynonymsByID">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getAphiaSynonymsByIDResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAphiaNameByID">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getAphiaNameByID">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getAphiaNameByIDResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAphiaRecords">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getAphiaRecords">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getAphiaRecordsResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getSourcesByAphiaID">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getSourcesByAphiaID">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getSourcesByAphiaIDResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAphiaID">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getAphiaID">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getAphiaIDResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="LocalAphiaService">
+    <wsdl:port name="LocalAphiaPort" binding="tns:LocalAphiaServiceSoapBinding">
+      <soap:address location="http://localhost:8080/aphiaProject/services/LocalAphiaPort"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://serviceLocal/" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="unqualified" targetNamespace="http://serviceLocal/" version="1.0">
+<xs:element name="getAphiaChildrenByID" type="tns:getAphiaChildrenByID"/>
+<xs:element name="getAphiaChildrenByIDResponse" type="tns:getAphiaChildrenByIDResponse"/>
+<xs:element name="getAphiaClassificationByID" type="tns:getAphiaClassificationByID"/>
+<xs:element name="getAphiaClassificationByIDResponse" type="tns:getAphiaClassificationByIDResponse"/>
+<xs:element name="getAphiaID" type="tns:getAphiaID"/>
+<xs:element name="getAphiaIDResponse" type="tns:getAphiaIDResponse"/>
+<xs:element name="getAphiaNameByID" type="tns:getAphiaNameByID"/>
+<xs:element name="getAphiaNameByIDResponse" type="tns:getAphiaNameByIDResponse"/>
+<xs:element name="getAphiaRecordByID" type="tns:getAphiaRecordByID"/>
+<xs:element name="getAphiaRecordByIDResponse" type="tns:getAphiaRecordByIDResponse"/>
+<xs:element name="getAphiaRecordByTSN" type="tns:getAphiaRecordByTSN"/>
+<xs:element name="getAphiaRecordByTSNResponse" type="tns:getAphiaRecordByTSNResponse"/>
+<xs:element name="getAphiaRecords" type="tns:getAphiaRecords"/>
+<xs:element name="getAphiaRecordsByNames" type="tns:getAphiaRecordsByNames"/>
+<xs:element name="getAphiaRecordsByNamesResponse" type="tns:getAphiaRecordsByNamesResponse"/>
+<xs:element name="getAphiaRecordsByVernacular" type="tns:getAphiaRecordsByVernacular"/>
+<xs:element name="getAphiaRecordsByVernacularResponse" type="tns:getAphiaRecordsByVernacularResponse"/>
+<xs:element name="getAphiaRecordsResponse" type="tns:getAphiaRecordsResponse"/>
+<xs:element name="getAphiaSynonymsByID" type="tns:getAphiaSynonymsByID"/>
+<xs:element name="getAphiaSynonymsByIDResponse" type="tns:getAphiaSynonymsByIDResponse"/>
+<xs:element name="getAphiaVernacularsByID" type="tns:getAphiaVernacularsByID"/>
+<xs:element name="getAphiaVernacularsByIDResponse" type="tns:getAphiaVernacularsByIDResponse"/>
+<xs:element name="getSourcesByAphiaID" type="tns:getSourcesByAphiaID"/>
+<xs:element name="getSourcesByAphiaIDResponse" type="tns:getSourcesByAphiaIDResponse"/>
+<xs:complexType name="getAphiaRecordsByVernacular">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:string"/>
+      <xs:element name="arg1" type="xs:boolean"/>
+      <xs:element name="arg2" type="xs:int"/>
+    </xs:sequence>
+  </xs:complexType>
+<xs:complexType name="getAphiaRecordsByVernacularResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:aphiaRecord"/>
+    </xs:sequence>
+  </xs:complexType>
+<xs:complexType name="aphiaRecord">
+    <xs:sequence>
+      <xs:element name="aphiaID" type="xs:int"/>
+      <xs:element minOccurs="0" name="authority" type="xs:string"/>
+      <xs:element minOccurs="0" name="citation" type="xs:string"/>
+      <xs:element minOccurs="0" name="family" type="xs:string"/>
+      <xs:element minOccurs="0" name="genus" type="xs:string"/>
+      <xs:element minOccurs="0" name="kingdom" type="xs:string"/>
+      <xs:element minOccurs="0" name="lsid" type="xs:string"/>
+      <xs:element minOccurs="0" name="order" type="xs:string"/>
+      <xs:element minOccurs="0" name="phylum" type="xs:string"/>
+      <xs:element minOccurs="0" name="rank" type="xs:string"/>
+      <xs:element minOccurs="0" name="scientificname" type="xs:string"/>
+      <xs:element minOccurs="0" name="status" type="xs:string"/>
+      <xs:element minOccurs="0" name="unacceptreason" type="xs:string"/>
+      <xs:element minOccurs="0" name="url" type="xs:string"/>
+      <xs:element name="valid_AphiaID" type="xs:int"/>
+      <xs:element minOccurs="0" name="valid_authority" type="xs:string"/>
+      <xs:element minOccurs="0" name="valid_name" type="xs:string"/>
+      <xs:element minOccurs="0" name="_class" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+<xs:complexType name="getAphiaRecordByID">
+    <xs:sequence>
+      <xs:element name="arg0" type="xs:int"/>
+    </xs:sequence>
+  </xs:complexType>
+<xs:complexType name="getAphiaRecordByIDResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:aphiaRecord"/>
+    </xs:sequence>
+  </xs:complexType>
+<xs:complexType name="getAphiaClassificationByID">
+    <xs:sequence>
+      <xs:element name="arg0" type="xs:int"/>
+    </xs:sequence>
+  </xs:complexType>
+<xs:complexType name="getAphiaClassificationByIDResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:classification"/>
+    </xs:sequence>
+  </xs:complexType>
+<xs:complexType name="classification">
+    <xs:sequence>
+      <xs:element name="aphiaID" type="xs:int"/>
+      <xs:element minOccurs="0" name="child" type="tns:classification"/>
+      <xs:element minOccurs="0" name="rank" type="xs:string"/>
+      <xs:element minOccurs="0" name="scientificname" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+<xs:complexType name="getAphiaChildrenByID">
+    <xs:sequence>
+      <xs:element name="arg0" type="xs:int"/>
+      <xs:element name="arg1" type="xs:int"/>
+      <xs:element name="arg2" type="xs:boolean"/>
+    </xs:sequence>
+  </xs:complexType>
+<xs:complexType name="getAphiaChildrenByIDResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:aphiaRecord"/>
+    </xs:sequence>
+  </xs:complexType>
+<xs:complexType name="getAphiaVernacularsByID">
+    <xs:sequence>
+      <xs:element name="arg0" type="xs:int"/>
+    </xs:sequence>
+  </xs:complexType>
+<xs:complexType name="getAphiaVernacularsByIDResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:vernacular"/>
+    </xs:sequence>
+  </xs:complexType>
+<xs:complexType name="vernacular">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="language" type="xs:string"/>
+      <xs:element minOccurs="0" name="language_code" type="xs:string"/>
+      <xs:element minOccurs="0" name="vernacular" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+<xs:complexType name="getAphiaRecordByTSN">
+    <xs:sequence>
+      <xs:element name="arg0" type="xs:int"/>
+    </xs:sequence>
+  </xs:complexType>
+<xs:complexType name="getAphiaRecordByTSNResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:aphiaRecord"/>
+    </xs:sequence>
+  </xs:complexType>
+<xs:complexType name="getAphiaRecordsByNames">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="arg0" type="xs:string"/>
+      <xs:element name="arg1" type="xs:boolean"/>
+      <xs:element name="arg2" type="xs:boolean"/>
+      <xs:element name="arg3" type="xs:boolean"/>
+    </xs:sequence>
+  </xs:complexType>
+<xs:complexType name="getAphiaRecordsByNamesResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:aphiaRecordArray"/>
+    </xs:sequence>
+  </xs:complexType>
+<xs:complexType name="getAphiaSynonymsByID">
+    <xs:sequence>
+      <xs:element name="arg0" type="xs:int"/>
+    </xs:sequence>
+  </xs:complexType>
+<xs:complexType name="getAphiaSynonymsByIDResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:aphiaRecord"/>
+    </xs:sequence>
+  </xs:complexType>
+<xs:complexType name="getSourcesByAphiaID">
+    <xs:sequence>
+      <xs:element name="arg0" type="xs:int"/>
+    </xs:sequence>
+  </xs:complexType>
+<xs:complexType name="getSourcesByAphiaIDResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:source"/>
+    </xs:sequence>
+  </xs:complexType>
+<xs:complexType name="source">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="fulltext" type="xs:string"/>
+      <xs:element minOccurs="0" name="link" type="xs:string"/>
+      <xs:element minOccurs="0" name="page" type="xs:string"/>
+      <xs:element minOccurs="0" name="reference" type="xs:string"/>
+      <xs:element name="source_id" type="xs:int"/>
+      <xs:element minOccurs="0" name="url" type="xs:string"/>
+      <xs:element minOccurs="0" name="use" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+<xs:complexType name="getAphiaRecords">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:string"/>
+      <xs:element name="arg1" type="xs:boolean"/>
+      <xs:element name="arg2" type="xs:boolean"/>
+      <xs:element name="arg3" type="xs:boolean"/>
+      <xs:element name="arg4" type="xs:int"/>
+    </xs:sequence>
+  </xs:complexType>
+<xs:complexType name="getAphiaRecordsResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:aphiaRecord"/>
+    </xs:sequence>
+  </xs:complexType>
+<xs:complexType name="getAphiaNameByID">
+    <xs:sequence>
+      <xs:element name="arg0" type="xs:int"/>
+    </xs:sequence>
+  </xs:complexType>
+<xs:complexType name="getAphiaNameByIDResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+<xs:complexType name="getAphiaID">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:string"/>
+      <xs:element name="arg1" type="xs:boolean"/>
+    </xs:sequence>
+  </xs:complexType>
+<xs:complexType name="getAphiaIDResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int"/>
+    </xs:sequence>
+  </xs:complexType>
+<xs:complexType final="#all" name="aphiaRecordArray">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="item" nillable="true" type="tns:aphiaRecord"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>
