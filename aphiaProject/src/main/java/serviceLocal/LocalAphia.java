@@ -433,7 +433,8 @@ public class LocalAphia implements AphiaNameServicePortType {
 								break;
 							}
 						}
-					}
+					} else
+						boolVar = false;
 					if (boolVar && listParametresObject.get(1).equals(like)
 							&& listParametresObject.get(2).equals(fuzzy)
 							&& listParametresObject.get(3).equals(marine_only)) {
