@@ -49,6 +49,7 @@ public class AphiaLocalTest {
 	public void getAphiaIDTest() throws RemoteException {
 
 		int aphiaID = aphiaPort.getAphiaID("Biota", true);
+		
 		Assert.assertEquals(1, aphiaID);
 	}
 
