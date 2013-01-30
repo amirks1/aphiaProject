@@ -29,7 +29,9 @@ public class AphiaLocalTest {
 		try {
 			aphiaPort = aphiaService.getLocalAphiaPort();
 		} catch (ServiceException e) {
-			// TODO Au(date2.getTime())/(1000*60*60*24*355)+"       "+date1.getTime()to-generated catch block
+			// TODO
+			// Au(date2.getTime())/(1000*60*60*24*355)+"       "+date1.getTime()to-generated
+			// catch block
 			e.printStackTrace();
 		}
 	}
@@ -48,19 +50,20 @@ public class AphiaLocalTest {
 	@Test
 	public void getAphiaIDTestDistant() throws RemoteException {
 
-		int aphiaID = aphiaPort.getAphiaID("Platyhelminthes", true);
+		int aphiaID = aphiaPort.getAphiaID("Chrysophyta", true);
 		aphiaID = aphiaPort.getAphiaID("Chrysophyta", true);
-		
+		System.out.println("getAphiaIDTestDistant " + aphiaID);
+
 		Assert.assertEquals(17166, aphiaID);
 	}
-	
+
 	@Test
 	public void getAphiaIDTestLocal() throws RemoteException {
 
 		int aphiaID = aphiaPort.getAphiaID("Chrysophyta", true);
 		aphiaID = aphiaPort.getAphiaID("Chrysophyta", true);
 		Assert.assertEquals(17166, aphiaID);
-		
+
 	}
 
 	@Test
@@ -72,12 +75,13 @@ public class AphiaLocalTest {
 		// 146142,162579,605374
 		int aphiaIDs[] = { 146142, 162579, 605374 };
 		aphiaRecords = aphiaPort.getAphiaRecords("Crypt%", true, true, true, 1);
-		aphiaRecords = aphiaPort.getAphiaRecords("Bryozoa%", true, true, true, 1);
+		aphiaRecords = aphiaPort.getAphiaRecords("Bryozoa%", true, true, true,
+				1);
 		for (int i = 0; i < aphiaRecords.length; i++) {
 			Assert.assertEquals(aphiaIDs[i], aphiaRecords[i].getAphiaID());
 		}
 	}
-	
+
 	@Test
 	public void getAphiaRecordsTestLocal() throws RemoteException {
 
@@ -86,8 +90,10 @@ public class AphiaLocalTest {
 		// Bryozoa% lui ressemble trois elements avec les IDs:
 		// 146142,162579,605374
 		int aphiaIDs[] = { 146142, 162579, 605374 };
-		aphiaRecords = aphiaPort.getAphiaRecords("Bryozoa%", true, true, true,	1);
-		aphiaRecords = aphiaPort.getAphiaRecords("Bryozoa%", true, true, true,	1);
+		aphiaRecords = aphiaPort.getAphiaRecords("Bryozoa%", true, true, true,
+				1);
+		aphiaRecords = aphiaPort.getAphiaRecords("Bryozoa%", true, true, true,
+				1);
 		for (int i = 0; i < aphiaRecords.length; i++) {
 			Assert.assertEquals(aphiaIDs[i], aphiaRecords[i].getAphiaID());
 		}
@@ -98,20 +104,20 @@ public class AphiaLocalTest {
 
 		String aphiaName = aphiaPort.getAphiaNameByID(571373);
 		aphiaName = aphiaPort.getAphiaNameByID(377975);
-		//Assert.assertEquals("Firmicutes", aphiaName);
+		System.out.println(aphiaName);
+		Assert.assertEquals("Firmicutes", aphiaName);
 	}
 
-	
 	@Test
 	public void getAphiaNameByIDTestLocal() throws RemoteException {
 
-		String aphiaName = aphiaPort.getAphiaNameByID(377975);
+		String aphiaName;
 		aphiaName = aphiaPort.getAphiaNameByID(377975);
-		//Assert.assertEquals("Firmicutes", aphiaName);
-		System.out.println(aphiaName);
+		aphiaName = aphiaPort.getAphiaNameByID(377975);
+		Assert.assertEquals("Firmicutes", aphiaName);
+
 	}
-	
-	
+
 	@Test
 	public void getAphiarecordByIDTestDistant() throws RemoteException {
 
@@ -123,7 +129,7 @@ public class AphiaLocalTest {
 				aphiaRecord.getAuthority());
 		Assert.assertEquals("Archaea", aphiaRecord.getScientificname());
 	}
-	
+
 	@Test
 	public void getAphiarecordByIDTestLocal() throws RemoteException {
 
@@ -149,7 +155,7 @@ public class AphiaLocalTest {
 		Assert.assertEquals("Porifera", aphiaRecord.getScientificname());
 
 	}
-	
+
 	@Test
 	public void getAphiarecordByTSNTestLocal() throws RemoteException {
 
@@ -177,7 +183,8 @@ public class AphiaLocalTest {
 				"Macrodasyida incertae sedis", "Macrodasyidae" };
 
 		String[] noms = { "Nematoda", "Macrodasyida" };
-		aphiaRecords = aphiaPort.getAphiaRecordsByNames(noms, true, true, false);
+		aphiaRecords = aphiaPort
+				.getAphiaRecordsByNames(noms, true, true, false);
 		aphiaRecords = aphiaPort.getAphiaRecordsByNames(noms, true, true, true);
 
 		for (int i = 0; i < aphiaRecords[0].length; i++) {
@@ -189,7 +196,7 @@ public class AphiaLocalTest {
 					aphiaRecords[1][i].getScientificname());
 		}
 	}
-	
+
 	@Test
 	public void getAphiaRecordsByNamesLocal() throws RemoteException {
 
@@ -226,15 +233,17 @@ public class AphiaLocalTest {
 		// mosdiertjes lui corréspond deux records avec les IDs: 146142,2601
 		int aphiaIDs[] = { 146142, 2601 };
 		String[] scientificName = { "Bryozoa", "Ectoprocta" };
-		aphiaRecords = aphiaPort.getAphiaRecordsByVernacular("platyhelminths",	true, 1);
-		aphiaRecords = aphiaPort.getAphiaRecordsByVernacular("mosdiertjes",	true, 1);
+		aphiaRecords = aphiaPort.getAphiaRecordsByVernacular("platyhelminths",
+				true, 1);
+		aphiaRecords = aphiaPort.getAphiaRecordsByVernacular("mosdiertjes",
+				true, 1);
 		for (int i = 0; i < aphiaRecords.length; i++) {
 			Assert.assertEquals(aphiaIDs[i], aphiaRecords[i].getAphiaID());
 			Assert.assertEquals(scientificName[i],
 					aphiaRecords[i].getScientificname());
 		}
 	}
-	
+
 	@Test
 	public void getAphiaRecordsByVernacularLocal() throws RemoteException {
 
@@ -243,8 +252,10 @@ public class AphiaLocalTest {
 		// mosdiertjes lui corréspond deux records avec les IDs: 146142,2601
 		int aphiaIDs[] = { 146142, 2601 };
 		String[] scientificName = { "Bryozoa", "Ectoprocta" };
-		aphiaRecords = aphiaPort.getAphiaRecordsByVernacular("mosdiertjes",	true, 1);
-		aphiaRecords = aphiaPort.getAphiaRecordsByVernacular("mosdiertjes",	true, 1);
+		aphiaRecords = aphiaPort.getAphiaRecordsByVernacular("mosdiertjes",
+				true, 1);
+		aphiaRecords = aphiaPort.getAphiaRecordsByVernacular("mosdiertjes",
+				true, 1);
 		for (int i = 0; i < aphiaRecords.length; i++) {
 			Assert.assertEquals(aphiaIDs[i], aphiaRecords[i].getAphiaID());
 			Assert.assertEquals(scientificName[i],
@@ -301,30 +312,26 @@ public class AphiaLocalTest {
 		AphiaRecord[] aphiaRecords;
 
 		int fils[] = { 1824, 146420, 1822, 146419 };
-		
-		aphiaRecords = aphiaPort.getAphiaChildrenByID(368663	, 1, true);
-		aphiaRecords = aphiaPort.getAphiaChildrenByID(1821	, 1, true);
+
+		aphiaRecords = aphiaPort.getAphiaChildrenByID(368663, 1, true);
+		aphiaRecords = aphiaPort.getAphiaChildrenByID(1821, 1, true);
 		for (int i = 0; i < aphiaRecords.length; i++) {
 			Assert.assertEquals(fils[i], aphiaRecords[i].getAphiaID());
 		}
 	}
-	
-	
-	
+
 	@Test
 	public void getAphiaChildrenByIDTestLocal() throws RemoteException {
 
 		AphiaRecord[] aphiaRecords;
 
 		int fils[] = { 1824, 146420, 1822, 146419 };
-		aphiaRecords = aphiaPort.getAphiaChildrenByID(1821	, 1, true);
+		aphiaRecords = aphiaPort.getAphiaChildrenByID(1821, 1, true);
 		aphiaRecords = aphiaPort.getAphiaChildrenByID(1821, 1, true);
 		for (int i = 0; i < aphiaRecords.length; i++) {
 			Assert.assertEquals(fils[i], aphiaRecords[i].getAphiaID());
 		}
 	}
-	
-	
 
 	@Test
 	public void getAphiaVernacularsByIDTestDistant() throws RemoteException {
@@ -341,6 +348,7 @@ public class AphiaLocalTest {
 					aphiaVernaculars[i].getVernacular());
 		}
 	}
+
 	@Test
 	public void getAphiaVernacularsByIDTestLocal() throws RemoteException {
 

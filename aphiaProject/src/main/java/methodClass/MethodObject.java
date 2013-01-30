@@ -10,26 +10,28 @@ public class MethodObject implements Serializable {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
+	/**
+	 * 
+	 */
+	
 
 	private String methodName;
-	private Date time;
+	private Date date;
 	private List listObject;
 	private Object returnValue;
 
-	public MethodObject(String methodName, Date time, List list,
-			Object returnValue) {
+	public MethodObject(String methodName, Date date, List list) {
 		this.methodName = methodName;
-		this.time = time;
-		this.listObject = list;
-		this.returnValue = returnValue;
+		this.date = date;
+		this.listObject = list;		
 	}
 
-	public Date getTime() {
-		return time;
+	public Date getDate() {
+		return date;
 	}
 
-	public void setTime(Date time) {
-		this.time = time;
+	public void setDate(Date date) {
+		this.date = date;
 	}
 
 	public List getListObject() {
@@ -52,7 +54,7 @@ public class MethodObject implements Serializable {
 		return returnValue;
 	}
 
-	public void setReturnValue(int returnValue) {
+	public void setReturnValue(Object returnValue) {
 		this.returnValue = returnValue;
 	}
 
