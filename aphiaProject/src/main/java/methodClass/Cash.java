@@ -27,7 +27,6 @@ public class Cash {
 		if (map.containsKey(methodName))
 			map.get(methodName).add(object);
 		else {
-			System.out.println("Cash " + object.getReturnValue());
 			List<MethodObject> listObject = new ArrayList<MethodObject>();
 			listObject.add(object);
 			map.put(methodName, listObject);

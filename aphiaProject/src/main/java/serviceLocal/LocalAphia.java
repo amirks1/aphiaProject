@@ -201,8 +201,20 @@ public class LocalAphia implements AphiaNameServicePortType {
 			throws RemoteException {
 
 		Classification aphiaClassification;
-		aphiaClassification = aphiaPort.getAphiaClassificationByID(aphiaID);
+		List<Object> listeParametres = new ArrayList<Object>();
+		listeParametres.add(aphiaID);
+		Date time = new Date();
 
+		MethodObject requestObject = new MethodObject(
+				"getAphiaClassificationByID", time, listeParametres);
+		MethodObject cashObject = cash.getCashMethodObject(requestObject);
+		if (cashObject != null) {
+			return (Classification) cashObject.getReturnValue();
+		} else {
+			aphiaClassification = aphiaPort.getAphiaClassificationByID(aphiaID);
+			requestObject.setReturnValue(aphiaClassification);
+			cash.addMethodObject(requestObject);
+		}
 		return aphiaClassification;
 	}
 
@@ -297,5 +309,4 @@ public class LocalAphia implements AphiaNameServicePortType {
 	protected void finalize() {
 		cash.saveMap();
 	}
-
 }
